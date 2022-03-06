@@ -8,17 +8,11 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
-  res.render('home')
+    res.render('home')
 })
 
 app.get('*', (req, res) => {
-  res.render('error404')
+    res.render('error404')
 })
-// GET /places
-app.get('/', (req, res) => {
-  let places = []
-  res.render('places/index')
-})
-app.listen(process.env.PORT,function(){
-  console.log('running',process.env.PORT)
-})
+
+app.listen(process.env.PORT)
